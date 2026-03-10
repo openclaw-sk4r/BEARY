@@ -44,13 +44,34 @@ c. Choose between Attended (you approve research before it begins writing) vs Un
 
 ## Set USER.md preferences
 In order to direct Beary, you need to set your preferences in the `.windsurf/USER.md` file for:
-- Intended Audience (e.g., engineer, data scientist, racing hobbyist, etc.)
-- Desired Sources (e.g., code repositories, academic papers, blogs, etc.)
+- **Intended Audience** (e.g., engineer, data scientist, racing hobbyist, etc.)
+- **Desired Sources** (e.g., code repositories, academic papers, blogs, etc.)
+- **Output Path** (optional): Where completed whitepapers should be moved after the workflow completes
+
+### Configuring Output Path
+By default, completed whitepapers are moved to `whitepaper-output/` (which is gitignored). To customize this:
+
+1. Open `.windsurf/USER.md`
+2. Find the "Output Path" section
+3. Update the path in the comment: `<!-- OUTPUT_PATH: your-custom-path -->`
+
+**Path Types:**
+- **Relative paths** (e.g., `completed-research`, `docs/whitepapers`) are relative to the project root
+- **Absolute paths** (e.g., `/Users/username/Documents/research`) **MUST** be used for directories outside the repository
+- If the path fails to resolve, the workflow will fall back to `whitepaper-output/` and notify you
+
+Examples:
+```markdown
+<!-- OUTPUT_PATH: completed-research -->
+<!-- OUTPUT_PATH: /Users/jankovis/Documents/beary-research -->
+```
+
+This keeps your workspace clean and prevents accidentally committing research artifacts.
 
 ## Sample prompt
-```/research-to-whitepaper TOPIC: runai-gpuaas-airgapping
-Description: How to make state-of-the-art workflows for GPUaaS using RunAI for heavily airgapped environments, plus what the industry standards, current best practices, and gaps are.
-Purpose: I am trying to take a heavily manual and sub-optimal approach to loading self-hosted models into our self-hosted version of RunAI. I need to establish governance and automation, as well as make a re-usable workflow that will help create a GPUaaS that will allow LLMs to be "on-demand" (or as close as possible to "on-demand") for experimentation and iteration.
+```/research-to-whitepaper TOPIC: Multi agent setups
+Description: What are the current setups, tools, and services for multi-agent systems? How do their abilities compare as personal AI assistants and coding setups vs in production? How are they being benchmarked? What are the cost trademarks?
+Purpose: I am trying to learn more about multi-agent setups, where the industry is, and where and how I can begin experimenting with them and evaluating them.
 ```
 ## Command Approval
 During the workflow, Cascade may prompt you to approve terminal commands (e.g., creating directories). Most of these are safe operations that have been marked with `// turbo` annotations to auto-run.

@@ -94,15 +94,31 @@ This includes:
 - Write the whitepaper (step 5)
 - Review (step 6)
 
-### 5. Final Delivery
+### 5. Move Completed Whitepaper to Output Directory
+
+Check `.windsurf/USER.md` for the output path configuration:
+- Look for the `OUTPUT_PATH:` value in the "Output Path" section
+- If not specified or file doesn't exist, use `whitepaper-output/` as the default
+- The path can be either:
+  - **Relative** to the project root (e.g., `whitepaper-output`, `docs/research`)
+  - **Absolute** (e.g., `/Users/username/Documents/research`) - required for paths outside the repository
+- Verify the path is valid and accessible
+- If the path fails to resolve or is inaccessible, fall back to `whitepaper-output/` and notify the user
+- Create the output directory if it doesn't exist
+// turbo
+- Move the entire `{TOPIC}/` directory to `{OUTPUT_PATH}/{TOPIC}/`
+
+This keeps completed research separate from active work and prevents accidental commits.
+
+### 6. Final Delivery
 
 **If ATTENDED:** Present the completed whitepaper and ask if they would like any revisions.
 **If UNATTENDED:** Notify the user that the workflow is complete.
 
 Provide file locations:
-- Whitepaper: `{TOPIC}/whitepaper/{TOPIC}-whitepaper.md`
-- References: `{TOPIC}/whitepaper/{TOPIC}-references.md`
-- Notes: `{TOPIC}/notes/{TOPIC}-notes.md`
+- Whitepaper: `{OUTPUT_PATH}/{TOPIC}/whitepaper/{TOPIC}-whitepaper.md`
+- References: `{OUTPUT_PATH}/{TOPIC}/whitepaper/{TOPIC}-references.md`
+- Notes: `{OUTPUT_PATH}/{TOPIC}/notes/{TOPIC}-notes.md`
 
 ---
 

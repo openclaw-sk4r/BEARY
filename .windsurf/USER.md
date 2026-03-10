@@ -20,3 +20,16 @@ When researching, we should prioritize the following:
 
 Do not use sources from:
 - Unknown blogs and unverified forums
+
+## Output Path
+
+Specify where completed whitepaper artifacts should be moved after the workflow completes.
+
+**Default**: `whitepaper-output/`
+
+To customize, set the path below:
+- **Relative paths** (e.g., `whitepaper-output`, `docs/research`) are relative to the project root
+- **Absolute paths** (e.g., `/Users/username/Documents/research`) MUST be used for directories outside the repository
+- If the path fails to resolve, the default `whitepaper-output/` will be used
+
+<!-- OUTPUT_PATH: whitepaper-output -->
