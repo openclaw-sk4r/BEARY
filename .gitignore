@@ -1,2 +1,6 @@
 .venv/*
 papers/*
+.venv
+
+tools/presentations/powerpoint-mcp-server/*
+tools/presentations/powerpoint-mcp-server/

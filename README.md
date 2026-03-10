@@ -6,61 +6,213 @@
 ██████╔╝███████╗██║  ██║██║  ██║   ██║       /|     |\
 ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝      (_|     |_)
 ```
-Welcome to BEARY, the agentic workflow for Background Research!
 
+# BEARY: Your AI-Powered Productivity Suite
 
-# What Beary Does
-Beary is an agentic workflow that takes a simple prompt and performs internet research, takes notes, and compiles its findings into a whitepaper, complete with citations. You can customize both the audience Beary writes for as well as the sources he looks at.
+**BEARY helps you work smarter, not harder.** A collection of AI-powered tools designed to enhance your productivity and streamline your workflow—without replacing your expertise or creativity.
 
-Currently, Beary as designed is only supported in Cascade/Windsurf, but you are super welcome to tweak it to fit your preferred agent!
+> **Philosophy:** Your content, your expertise, your voice. BEARY just makes the process more efficient.
 
-# Before you use
-Remember that Beary is agent-powered, and LLMs hallucinate. For important topics, please check references and citations to ensure that they are
-1) Real
-2) Accurate
-3) Up-to-date
+---
 
-It is highly encouraged to choose models that have a better track record of being accurate and up-to-date.  It is *never* appropriate to steal ideas or commit plagarism or to pass this work off as your own research. Please cite use of AI whenever applicable.
+## 🎯 What BEARY Does
 
+BEARY is a suite of **independent, modular tools** that help with common office and personal productivity tasks:
 
-# How to Use Beary
-1. Clone repository locally or copy files into your own Cascade project.
+- **Research Tool** - Gather and synthesize information efficiently
+- **Presentation Tool** - Create and format PowerPoint slides quickly
+- **Editing Tool** *(Coming Soon)* - Refine and polish your existing writing
 
-2a. In your cascade terminal, run the slash command:
-`/research-to-whitepaper`.
-2b. Then provide your topic details:
-TOPIC: my-topic
-Description: What this topic is about.
-Purpose (Optional): What you want to achieve with this topic or why you are interested in it.
-2c. Press enter
+**Key Principle:** BEARY assists with tasks, but **your content and ideas remain yours**. These tools help you work more efficiently, not generate content from scratch.
 
-3. The workflow will prompt you before beginning:
-a. If you do not provide a purpose, the agent will prompt you for one. You may skip it but it is recommended to give your whitepaper a narrative throughline.
-b. Choose between Hibernation mode (token-conservative) vs Hyperphagia mode (token-generous)
-c. Choose between Attended (you approve research before it begins writing) vs Unattended (it runs with no further user contact)
+---
 
+## 🚀 Quick Start (Pick Your Tool)
 
-# Getting Started
+### Just Need Research?
+→ **[Research Tool Documentation](tools/research/README.md)**
 
-## Set USER.md preferences
-In order to direct Beary, you need to set your preferences in the `.windsurf/USER.md` file for:
-- Intended Audience (e.g., engineer, data scientist, racing hobbyist, etc.)
-- Desired Sources (e.g., code repositories, academic papers, blogs, etc.)
+### Just Need Presentations?
+→ **[Presentation Tool Documentation](tools/presentations/README.md)**
 
-## Sample prompt
-```/research-to-whitepaper TOPIC: runai-gpuaas-airgapping
-Description: How to make state-of-the-art workflows for GPUaaS using RunAI for heavily airgapped environments, plus what the industry standards, current best practices, and gaps are.
-Purpose: I am trying to take a heavily manual and sub-optimal approach to loading self-hosted models into our self-hosted version of RunAI. I need to establish governance and automation, as well as make a re-usable workflow that will help create a GPUaaS that will allow LLMs to be "on-demand" (or as close as possible to "on-demand") for experimentation and iteration.
+### Want Everything?
+Keep reading for full installation...
+
+---
+
+## 📦 Repository Structure
+
 ```
-## Command Approval
-During the workflow, Cascade may prompt you to approve terminal commands (e.g., creating directories). Most of these are safe operations that have been marked with `// turbo` annotations to auto-run.
+BEARY/
+├── tools/                      # Individual productivity tools
+│   ├── research/              # Background research & synthesis
+│   ├── presentations/         # PowerPoint automation
+│   └── editing/               # (Coming soon) Writing refinement
+├── core/                      # Shared utilities
+│   ├── templates/             # Document templates
+│   ├── shared-skills/         # Reusable AI skills
+│   └── mcp-configs/           # MCP server configurations
+├── examples/                  # End-to-end workflow examples
+└── .windsurf/                 # Windsurf IDE configuration
+```
 
-If you still see approval prompts for safe commands like `mkdir`, you can configure your IDE to auto-approve them:
-1. Open Windsurf Settings
-2. Navigate to the command allowlist settings
-3. Add safe commands (like `mkdir`) to your allowlist
+**Each tool is standalone** - use what you need, ignore the rest.
 
-This is a **per-IDE setting**, so each user needs to configure it individually if they want to skip approval prompts beyond what the workflow annotations cover.
+---
 
-## Model Selection
-Windsurf AI uses *one request* per action. This means that it will not use multiple requests to generate a response. Since there is one prompt and a few responses, *it will only take a few credits to run the research-to-whitepaper workflow.* Using high-cost models is therefore encouraged, as it will produce a higher-quality whitepaper for relatively little.
+## 🛠️ Available Tools
+
+### 1. Research Tool
+**Purpose:** Efficiently gather and organize information on a topic
+
+**What it does:**
+- Conducts structured internet research
+- Takes organized notes with proper citations
+- Synthesizes findings into a coherent document
+
+**What it doesn't do:**
+- Replace your analysis or expertise
+- Generate content without your direction
+- Make decisions about what's important
+
+**Use when:** You need to quickly get up to speed on a topic, gather sources, or create a foundation for your own work.
+
+→ **[Full Documentation](tools/research/README.md)**
+
+---
+
+### 2. Presentation Tool
+**Purpose:** Streamline PowerPoint creation and formatting
+
+**What it does:**
+- Analyzes existing PowerPoint templates
+- Applies consistent styling and themes
+- Automates slide creation from your content
+- Formats charts, tables, and layouts
+
+**What it doesn't do:**
+- Create presentation content for you
+- Decide what to present
+- Replace your storytelling
+
+**Use when:** You have content ready and need to format it into professional slides quickly.
+
+→ **[Full Documentation](tools/presentations/README.md)**
+
+---
+
+### 3. Editing Tool *(Coming Soon)*
+**Purpose:** Refine and polish your existing writing
+
+**What it does:**
+- Suggests improvements to clarity and flow
+- Checks consistency and style
+- Identifies areas that need strengthening
+
+**What it doesn't do:**
+- Rewrite your content
+- Change your voice or message
+- Generate new ideas
+
+**Use when:** You've written something and want to make it better.
+
+---
+
+## 💡 Philosophy: Your Content Matters
+
+BEARY is built on the principle that **your expertise, ideas, and voice are irreplaceable**. 
+
+These tools are designed to:
+- ✅ Save you time on repetitive tasks
+- ✅ Help you organize and structure information
+- ✅ Streamline formatting and presentation
+- ✅ Support your workflow, not replace it
+
+They are **not** designed to:
+- ❌ Generate content without your input
+- ❌ Replace your critical thinking
+- ❌ Make decisions for you
+- ❌ Pass off AI work as human expertise
+
+**Always cite AI assistance when applicable.** Your integrity matters.
+
+---
+
+## 🎓 Getting Started
+
+### Prerequisites
+- **Windsurf IDE** (Cascade) - BEARY is optimized for Windsurf
+- **Python 3.11+** - For running tools locally
+- **Internet connection** - For research and MCP servers
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd BEARY
+   ```
+
+2. **Choose your tool(s):**
+   - **Research only:** Follow `tools/research/README.md`
+   - **Presentations only:** Follow `tools/presentations/README.md`
+   - **Everything:** Continue below...
+
+3. **Set up your environment:**
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
+
+4. **Configure Windsurf:**
+   - Copy relevant MCP configurations from `core/mcp-configs/`
+   - Set your preferences in `.windsurf/USER.md`
+
+---
+
+## 📚 Documentation
+
+- **[Research Tool Guide](tools/research/README.md)** - Detailed research workflow
+- **[Presentation Tool Guide](tools/presentations/README.md)** - PowerPoint automation
+- **[Core Utilities](core/README.md)** - Shared templates and configurations
+- **[Examples](examples/README.md)** - End-to-end workflow examples
+
+---
+
+## ⚠️ Important Notes
+
+### AI Limitations
+BEARY uses AI agents, and **LLMs can hallucinate**. Always:
+- ✅ Verify citations and sources
+- ✅ Check facts and accuracy
+- ✅ Review generated content critically
+- ✅ Use high-quality models for important work
+
+### Ethical Use
+- **Never plagiarize** - Cite sources appropriately
+- **Disclose AI use** - Be transparent when AI assisted your work
+- **Maintain integrity** - Your reputation depends on accurate, honest work
+
+---
+
+## 🤝 Contributing
+
+BEARY is designed to be modular and extensible. Contributions welcome!
+
+- **Add new tools** - Follow the `tools/` structure
+- **Improve existing tools** - Submit PRs with enhancements
+- **Share workflows** - Add examples to `examples/`
+
+---
+
+## 📄 License
+
+[Add your license here]
+
+---
+
+## 🐻 About BEARY
+
+BEARY started as a background research tool and has evolved into a productivity suite. The name stands for **B**ackground r**E**se**AR**ch, but now represents a broader mission: helping professionals work more efficiently while maintaining the quality and integrity of their work.
+
+**Your expertise. Your content. Your voice. Just more efficient.**
