@@ -20,6 +20,8 @@ Add this to your project `.gitignore`:
 beary-scratchpad/
 ```
 
+> Caveat: some agent tools restrict reading ignored paths. If your tool does this, either (a) skip ignoring `beary-scratchpad/`, or (b) configure the tool to allow reading ignored files while still keeping them uncommitted.
+
 Summon BEARY:
 
 ```text
@@ -103,6 +105,8 @@ Recommended: add this to your project `.gitignore` to keep temporary research wo
 ```gitignore
 beary-scratchpad/
 ```
+
+Caveat: if your agent refuses to read ignored files, remove this ignore or allowlist the path in tool settings.
 
 ## Sample prompt
 ```text
