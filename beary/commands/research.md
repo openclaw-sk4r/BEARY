@@ -30,11 +30,6 @@ Before starting, you need:
  
 Before beginning research, confirm the following with the user:
 
-**0.0 BEARY summon banner**
-When BEARY is summoned, first read `.agents/skills/beary/LOGO.md` and print its logo banner once.
-
-Then continue with setup questions.
- 
 **0.1 Purpose (if not provided)**
 If the user did not provide a purpose, ask:
 *"Would you like to provide a purpose for this research? This helps focus the questions and narrative. You can skip this if you prefer broad exploration."*
