@@ -51,7 +51,7 @@ It is highly encouraged to choose models that have a better track record of bein
 # Getting Started
 
 ## Set USER.md preferences
-In order to direct Beary, you need to set your preferences in the `.agent/skills/beary/USER.md` file for:
+In order to direct Beary, you need to set your preferences in the `.agents/skills/beary/USER.md` file for:
 - **Intended Audience** (e.g., engineer, data scientist, racing hobbyist, etc.)
 - **Desired Sources** (e.g., code repositories, academic papers, blogs, etc.)
 - **Output Path** (optional): Where completed whitepapers should be moved after the workflow completes
@@ -59,7 +59,7 @@ In order to direct Beary, you need to set your preferences in the `.agent/skills
 ### Configuring Output Path
 By default, completed whitepapers are moved to `whitepaper-output/` (which is gitignored). To customize this:
 
-1. Open `.agent/skills/beary/USER.md`
+1. Open `.agents/skills/beary/USER.md`
 2. Find the "Output Path" section
 3. Update the path in the comment: `<!-- OUTPUT_PATH: your-custom-path -->`
 

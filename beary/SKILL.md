@@ -16,4 +16,4 @@ Core files:
 - `skills/user-context-template/SKILL.md`
 - `templates/*`
 
-Configure audience/source/output preferences in the host project's `.agent/skills/beary/USER.md` (or equivalent agent profile path).
+Configure audience/source/output preferences in the host project's `.agents/skills/beary/USER.md` (or equivalent agent profile path).
