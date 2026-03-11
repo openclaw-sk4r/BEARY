@@ -32,16 +32,12 @@ It is highly encouraged to choose models that have a better track record of bein
 # How to Use Beary
 1. Install using Quickstart above.
 
-2. Trigger BEARY in either way:
+2. Summon BEARY by calling BEARY in your prompt.
 
 ```text
-/research
-```
-
-```text
-Research <topic> and create a whitepaper with citations
-Use BEARY to deep-dive <topic>
-Prepare a cited research brief on <topic>
+BEARY, research <topic> and create a whitepaper with citations
+BEARY, deep-dive <topic>
+BEARY, prepare a cited research brief on <topic>
 ```
 
 3. Provide topic details when prompted:
@@ -89,7 +85,9 @@ Path rules:
 - Invalid paths fall back to `whitepaper-output/`
 
 ## Sample prompt
-```/research TOPIC: Multi agent setups
+```text
+BEARY, research the topic below and produce a cited whitepaper.
+TOPIC: Multi agent setups
 Description: What are the current setups, tools, and services for multi-agent systems? How do their abilities compare as personal AI assistants and coding setups vs in production? How are they being benchmarked? What are the cost trademarks?
 Purpose: I am trying to learn more about multi-agent setups, where the industry is, and where and how I can begin experimenting with them and evaluating them.
 ```
