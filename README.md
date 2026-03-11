@@ -50,31 +50,31 @@ It is highly encouraged to choose models that have a better track record of bein
 
 # Getting Started
 
-## Set USER.md preferences
-In order to direct Beary, you need to set your preferences in the `.agents/skills/beary/USER.md` file for:
-- **Intended Audience** (e.g., engineer, data scientist, racing hobbyist, etc.)
-- **Desired Sources** (e.g., code repositories, academic papers, blogs, etc.)
-- **Output Path** (optional): Where completed whitepapers should be moved after the workflow completes
+## USER.md setup (interview-first)
+On first run, BEARY will interview you and generate/update:
+- `.agents/skills/beary/USER.md`
 
-### Configuring Output Path
-By default, completed whitepapers are moved to `whitepaper-output/` (which is gitignored). To customize this:
+It captures defaults for:
+- Audience level and role
+- Purpose style (exploration vs decision support)
+- Source priorities and exclusions
+- Freshness preference (e.g., 30/60/90 days)
+- Depth and contradiction strictness
+- Output path
 
-1. Open `.agents/skills/beary/USER.md`
-2. Find the "Output Path" section
-3. Update the path in the comment: `<!-- OUTPUT_PATH: your-custom-path -->`
+### Configuring Output Path manually (optional)
+You can still edit `.agents/skills/beary/USER.md` directly:
 
-**Path Types:**
-- **Relative paths** (e.g., `completed-research`, `docs/whitepapers`) are relative to the project root
-- **Absolute paths** (e.g., `/Users/username/Documents/research`) **MUST** be used for directories outside the repository
-- If the path fails to resolve, the workflow will fall back to `whitepaper-output/` and notify you
-
-Examples:
 ```markdown
+<!-- OUTPUT_PATH: whitepaper-output -->
 <!-- OUTPUT_PATH: completed-research -->
-<!-- OUTPUT_PATH: /Users/jankovis/Documents/beary-research -->
+<!-- OUTPUT_PATH: /Users/username/Documents/beary-research -->
 ```
 
-This keeps your workspace clean and prevents accidentally committing research artifacts.
+Path rules:
+- Relative paths are resolved from project root
+- Absolute paths are required outside the repo
+- Invalid paths fall back to `whitepaper-output/`
 
 ## Sample prompt
 ```/research-to-whitepaper TOPIC: Multi agent setups
