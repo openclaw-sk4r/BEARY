@@ -20,7 +20,7 @@ Remember that Beary is agent-powered, and LLMs hallucinate. For important topics
 2) Accurate
 3) Up-to-date
 
-It is highly encouraged to choose models that have a better track record of being accurate and up-to-date.  It is *never* appropriate to steal ideas or commit plagarism or to pass this work off as your own research. Please cite use of AI whenever applicable.
+It is highly encouraged to choose models that have a better track record of being accurate and up-to-date.  It is *never* appropriate to steal ideas or commit plagiarism or to pass this work off as your own research. Please cite use of AI whenever applicable.
 
 
 # How to Use Beary
@@ -43,7 +43,7 @@ c. Choose between Attended (you approve research before it begins writing) vs Un
 # Getting Started
 
 ## Set USER.md preferences
-In order to direct Beary, you need to set your preferences in the `.windsurf/USER.md` file for:
+In order to direct Beary, you need to set your preferences in the `.agent/USER.md` file for:
 - **Intended Audience** (e.g., engineer, data scientist, racing hobbyist, etc.)
 - **Desired Sources** (e.g., code repositories, academic papers, blogs, etc.)
 - **Output Path** (optional): Where completed whitepapers should be moved after the workflow completes
@@ -51,7 +51,7 @@ In order to direct Beary, you need to set your preferences in the `.windsurf/USE
 ### Configuring Output Path
 By default, completed whitepapers are moved to `whitepaper-output/` (which is gitignored). To customize this:
 
-1. Open `.windsurf/USER.md`
+1. Open `.agent/USER.md`
 2. Find the "Output Path" section
 3. Update the path in the comment: `<!-- OUTPUT_PATH: your-custom-path -->`
 
