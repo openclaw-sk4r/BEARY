@@ -11,6 +11,7 @@ Run the command workflow:
 - `research`
 
 Core files:
+- `LOGO.md`
 - `commands/research.md`
 - `skills/internet-research/SKILL.md`
 - `skills/references/SKILL.md`
