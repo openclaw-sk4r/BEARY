@@ -55,6 +55,8 @@ Mode: Hibernation or Hyperphagia
 Review flow: Attended or Unattended
 ```
 
+5. BEARY will run research in `beary-scratchpad/{TOPIC}` and publish final deliverables to your configured output path (default: `whitepaper-output/`).
+
 
 # Getting Started
 
@@ -74,7 +76,7 @@ It captures defaults for:
 You can still edit `.agents/skills/beary/USER.md` directly:
 
 ```markdown
-<!-- OUTPUT_PATH: beary_scratchpad -->
+<!-- OUTPUT_PATH: whitepaper-output -->
 <!-- OUTPUT_PATH: completed-research -->
 <!-- OUTPUT_PATH: /Users/username/Documents/beary-research -->
 ```
@@ -82,12 +84,12 @@ You can still edit `.agents/skills/beary/USER.md` directly:
 Path rules:
 - Relative paths are resolved from project root
 - Absolute paths are required outside the repo
-- Invalid paths fall back to `beary_scratchpad/`
+- Invalid paths fall back to `whitepaper-output/`
 
-Recommended: add this to your project `.gitignore` to keep research artifacts out of commits:
+Recommended: add this to your project `.gitignore` to keep temporary research workspace out of commits:
 
 ```gitignore
-beary_scratchpad/
+beary-scratchpad/
 ```
 
 ## Sample prompt

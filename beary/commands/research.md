@@ -99,19 +99,19 @@ This includes:
 
 ### 5. Move Completed Whitepaper to Output Directory
 
-Use a dedicated parent folder for BEARY artifacts (default: `beary_scratchpad/`) so topic folders do not clutter the project root.
+Research should run inside `beary-scratchpad/{TOPIC}` to avoid cluttering the project root.
 
 Check `.agents/skills/beary/USER.md` for the output path configuration:
 - Look for the `OUTPUT_PATH:` value in the "Output Path" section
-- If not specified or file doesn't exist, use `beary_scratchpad/` as the default
+- If not specified or file doesn't exist, use `whitepaper-output/` as the default
 - The path can be either:
-  - **Relative** to the project root (e.g., `beary_scratchpad`, `docs/research`)
+  - **Relative** to the project root (e.g., `whitepaper-output`, `docs/research`)
   - **Absolute** (e.g., `/Users/username/Documents/research`) - required for paths outside the repository
 - Verify the path is valid and accessible
-- If the path fails to resolve or is inaccessible, fall back to `beary_scratchpad/` and notify the user
+- If the path fails to resolve or is inaccessible, fall back to `whitepaper-output/` and notify the user
 - Create the output directory if it doesn't exist
 // turbo
-- Move the entire `{TOPIC}/` directory to `{OUTPUT_PATH}/{TOPIC}/`
+- Move `beary-scratchpad/{TOPIC}/whitepaper/` and `beary-scratchpad/{TOPIC}/notes/` into `{OUTPUT_PATH}/{TOPIC}/`
 
 This keeps completed research separate from active work and prevents accidental commits.
 
@@ -124,6 +124,7 @@ Provide file locations:
 - Whitepaper: `{OUTPUT_PATH}/{TOPIC}/whitepaper/{TOPIC}-whitepaper.md`
 - References: `{OUTPUT_PATH}/{TOPIC}/whitepaper/{TOPIC}-references.md`
 - Notes: `{OUTPUT_PATH}/{TOPIC}/notes/{TOPIC}-notes.md`
+- Scratchpad workspace: `beary-scratchpad/{TOPIC}/`
 
 ---
 
