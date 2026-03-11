@@ -8,6 +8,9 @@
 ```
 Welcome to BEARY, the agentic workflow for Background Research!
 
+Install: `npx skills add sally-jankovic/BEARY`
+
+For full install/update/uninstall options, see [INSTALL.md](./INSTALL.md).
 
 # What Beary Does
 Beary is an agentic workflow that takes a simple prompt and performs internet research, takes notes, and compiles its findings into a whitepaper, complete with citations. You can customize both the audience Beary writes for as well as the sources he looks at.
@@ -22,39 +25,6 @@ Remember that Beary is agent-powered, and LLMs hallucinate. For important topics
 
 It is highly encouraged to choose models that have a better track record of being accurate and up-to-date.  It is *never* appropriate to steal ideas or commit plagiarism or to pass this work off as your own research. Please cite use of AI whenever applicable.
 
-
-# Install Beary
-
-Install via skills registry (recommended):
-
-```bash
-npx skills add sally-jankovic/BEARY
-```
-
-Manual install via script:
-
-```bash
-# from BEARY repo root
-scripts/skills.sh install /path/to/your/project
-```
-
-Update an existing installation:
-
-```bash
-scripts/skills.sh update /path/to/your/project
-```
-
-Check installation health:
-
-```bash
-scripts/skills.sh doctor /path/to/your/project
-```
-
-Uninstall:
-
-```bash
-scripts/skills.sh uninstall /path/to/your/project
-```
 
 # How to Use Beary
 1. Install via `scripts/skills.sh install /path/to/your/project` (or clone/copy manually).
