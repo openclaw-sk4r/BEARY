@@ -1,6 +1,6 @@
 .venv/*
 .venv
-whitepaper-output/*
+beary_scratchpad/*
 tools
 tools*
 

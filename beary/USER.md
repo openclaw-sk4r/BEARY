@@ -27,11 +27,11 @@ Do not use sources from:
 
 Specify where completed whitepaper artifacts should be moved after the workflow completes.
 
-DEFAULT_OUTPUT_PATH: whitepaper-output
+DEFAULT_OUTPUT_PATH: beary_scratchpad
 
 To customize, set the path below:
-- **Relative paths** (e.g., `whitepaper-output`, `docs/research`) are relative to the project root
+- **Relative paths** (e.g., `beary_scratchpad`, `docs/research`) are relative to the project root
 - **Absolute paths** (e.g., `/Users/username/Documents/research`) MUST be used for directories outside the repository
-- If the path fails to resolve, the default `whitepaper-output/` will be used
+- If the path fails to resolve, the default `beary_scratchpad/` will be used
 
-<!-- OUTPUT_PATH: whitepaper-output -->
+<!-- OUTPUT_PATH: beary_scratchpad -->

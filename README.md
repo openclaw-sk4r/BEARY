@@ -74,7 +74,7 @@ It captures defaults for:
 You can still edit `.agents/skills/beary/USER.md` directly:
 
 ```markdown
-<!-- OUTPUT_PATH: whitepaper-output -->
+<!-- OUTPUT_PATH: beary_scratchpad -->
 <!-- OUTPUT_PATH: completed-research -->
 <!-- OUTPUT_PATH: /Users/username/Documents/beary-research -->
 ```
@@ -82,7 +82,13 @@ You can still edit `.agents/skills/beary/USER.md` directly:
 Path rules:
 - Relative paths are resolved from project root
 - Absolute paths are required outside the repo
-- Invalid paths fall back to `whitepaper-output/`
+- Invalid paths fall back to `beary_scratchpad/`
+
+Recommended: add this to your project `.gitignore` to keep research artifacts out of commits:
+
+```gitignore
+beary_scratchpad/
+```
 
 ## Sample prompt
 ```text
