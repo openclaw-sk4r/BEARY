@@ -20,7 +20,7 @@ Before starting, you need:
 | Internet Research | `.agent/skills/beary/skills/internet-research/SKILL.md` | Research execution steps |
 | References | `.agent/skills/beary/skills/references/SKILL.md` | Citation format rules |
 | Whitepaper Writing | `.agent/skills/beary/skills/whitepaper-writing/SKILL.md` | Whitepaper writing steps |
-| User Context Template | `.agent/skills/beary/skills/user-context-template/SKILL.md` | Create or refresh `.agent/USER.md` template |
+| User Context Template | `.agent/skills/beary/skills/user-context-template/SKILL.md` | Create or refresh `.agent/skills/beary/USER.md` template |
 
 ---
 
@@ -56,9 +56,9 @@ Record the user's choice as **ATTENDED** (yes) or **UNATTENDED** (no).
 
 ### 1. Read User Context (Once)
 
-If `.agent/USER.md` does not exist, first create it from `.agent/skills/beary/templates/user-context-template.md` by following `.agent/skills/beary/skills/user-context-template/SKILL.md`.
+If `.agent/skills/beary/USER.md` does not exist, first create it from `.agent/skills/beary/templates/user-context-template.md` by following `.agent/skills/beary/skills/user-context-template/SKILL.md`.
 
-Then read `.agent/USER.md` to understand the user's audience and research priorities. This context applies to the entire workflow — do not re-read it in subsequent steps.
+Then read `.agent/skills/beary/USER.md` to understand the user's audience and research priorities. This context applies to the entire workflow — do not re-read it in subsequent steps.
 
 ### 2. Execute Internet Research
 
@@ -99,7 +99,7 @@ This includes:
 
 ### 5. Move Completed Whitepaper to Output Directory
 
-Check `.agent/USER.md` for the output path configuration:
+Check `.agent/skills/beary/USER.md` for the output path configuration:
 - Look for the `OUTPUT_PATH:` value in the "Output Path" section
 - If not specified or file doesn't exist, use `whitepaper-output/` as the default
 - The path can be either:
