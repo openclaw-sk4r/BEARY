@@ -35,7 +35,7 @@ It is highly encouraged to choose models that have a better track record of bein
 2. Trigger BEARY in either way:
 
 ```text
-/research-to-whitepaper
+/research
 ```
 
 ```text
@@ -89,7 +89,7 @@ Path rules:
 - Invalid paths fall back to `whitepaper-output/`
 
 ## Sample prompt
-```/research-to-whitepaper TOPIC: Multi agent setups
+```/research TOPIC: Multi agent setups
 Description: What are the current setups, tools, and services for multi-agent systems? How do their abilities compare as personal AI assistants and coding setups vs in production? How are they being benchmarked? What are the cost trademarks?
 Purpose: I am trying to learn more about multi-agent setups, where the industry is, and where and how I can begin experimenting with them and evaluating them.
 ```
@@ -104,4 +104,4 @@ If you still see approval prompts for safe commands like `mkdir`, you can config
 This is a **per-IDE setting**, so each user needs to configure it individually if they want to skip approval prompts beyond what the workflow annotations cover.
 
 ## Model Selection
-Windsurf AI uses *one request* per action. This means that it will not use multiple requests to generate a response. Since there is one prompt and a few responses, *it will only take a few credits to run the research-to-whitepaper workflow.* Using high-cost models is therefore encouraged, as it will produce a higher-quality whitepaper for relatively little.
+Windsurf AI uses *one request* per action. This means that it will not use multiple requests to generate a response. Since there is one prompt and a few responses, *it will only take a few credits to run the research workflow.* Using high-cost models is therefore encouraged, as it will produce a higher-quality whitepaper for relatively little.
