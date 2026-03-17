@@ -35,18 +35,20 @@ If the user did not provide a purpose, ask:
 *"Would you like to provide a purpose for this research? This helps focus the questions and narrative. You can skip this if you prefer broad exploration."*
  
 **0.2 Research Mode Selection**
-Ask the user to choose their research mode:
+Check `.agents/skills/beary/USER.md` for a `DEFAULT_MODE` value (in the `<!-- DEFAULT_MODE: ... -->` comment). If a valid default is set, use it and inform the user. Otherwise, ask:
 *"Which research mode would you like to use?"*
 - **Hibernation**: Preserve my tokens and be judicious with amounts collected and written
 - **Hyperphagia**: Prioritize quantity and variety of resources, eat those tokens yum
 
 Record the user's choice as **MODE** (HIBERNATION or HYPERPHAGIA).
- 
+
 **0.3 Review Presence**
-Ask:
+Check `.agents/skills/beary/USER.md` for a `DEFAULT_REVIEW` value (in the `<!-- DEFAULT_REVIEW: ... -->` comment). If a valid default is set, use it and inform the user. Otherwise, ask:
 *"Would you like to be present for review checkpoints during the process? This improves quality but requires continued engagement. If you say no, I'll complete the entire workflow without stopping."*
- 
+
 Record the user's choice as **ATTENDED** (yes) or **UNATTENDED** (no).
+
+The user can always override persisted defaults by specifying a mode or review preference in their prompt.
 
 **Mode Summary:**
 - **HIBERNATION**: Token-conservative mode. Uses minimal questions/search terms, performs sufficiency checks, and defaults to single-topic (no subtopics).
@@ -125,6 +127,17 @@ Provide file locations:
 - References: `{OUTPUT_PATH}/{TOPIC}/whitepaper/{TOPIC}-references.md`
 - Notes: `{OUTPUT_PATH}/{TOPIC}/notes/{TOPIC}-notes.md`
 - Scratchpad workspace: `beary-scratchpad/{TOPIC}/`
+
+---
+
+## Multi-Agent Execution
+
+When the orchestrating tool supports multi-agent or agent-team capabilities, apply them to the workflow:
+
+- **Phase 2 (Internet Research):** Spawn parallel sub-agents for independent research questions. Each agent handles its own question's search terms, source reading, and note-taking. A coordinating agent merges notes and references after all sub-agents complete.
+- **Phase 4 (Whitepaper Writing):** If the whitepaper has independent sections, assign each section to a sub-agent writing in parallel, then merge.
+- **Cross-phase:** Research and whitepaper phases are sequential (research must finish first), but within each phase, parallelize wherever possible.
+- If multi-agent execution is not supported by the tool, proceed sequentially with no behavior change.
 
 ---
 

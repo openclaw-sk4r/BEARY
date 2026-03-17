@@ -21,6 +21,21 @@ When researching, prioritize:
 Avoid sources from:
 - Unknown blogs and unverified forums
 
+## Research Mode
+
+Default research mode and review preferences. These are used as defaults when not explicitly specified at runtime.
+
+- **Default Mode:** (not set — ask at runtime)
+- **Default Review:** (not set — ask at runtime)
+
+Valid modes: `HIBERNATION` (token-conservative) or `HYPERPHAGIA` (token-generous).
+Valid review: `ATTENDED` (stop for review) or `UNATTENDED` (full auto).
+
+If set, BEARY will skip the corresponding setup question and use these defaults. The user can still override at runtime.
+
+<!-- DEFAULT_MODE: -->
+<!-- DEFAULT_REVIEW: -->
+
 ## Output Path
 
 Specify where completed whitepaper artifacts should be moved after the workflow completes.

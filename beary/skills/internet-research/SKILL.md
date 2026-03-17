@@ -176,6 +176,14 @@ After editing the notes, run this final check to ensure note quality.
 | Whitepaper | `.agents/skills/beary/templates/whitepaper.md` |
 
 
+# Multi-Agent Execution
+
+When the orchestrating tool supports multi-agent or agent-team execution, use it to parallelize research:
+- **Step 4.1:** Spawn one sub-agent per general research question. Each agent executes its own search terms and writes notes to a temporary section. A coordinating agent merges results into `{TOPIC}-notes.md` and `{TOPIC}-references.md`.
+- **Step 4.2:** Spawn one sub-agent per in-depth question (or per subtopic for complex topics). Merge on completion.
+- Each sub-agent must follow the same citation rules (`.agents/skills/beary/skills/references/SKILL.md`).
+- If multi-agent is unavailable, execute questions sequentially as described above.
+
 # Best Practices
 
 ## HIBERNATION Mode

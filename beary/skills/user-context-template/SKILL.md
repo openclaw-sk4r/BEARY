@@ -30,11 +30,15 @@ Ask these in order, then write/update USER.md from answers:
    - “Should BEARY prioritize concise summaries or deep technical detail?”
    - “How strict should contradiction checks be? (light / normal / strict)”
 
-6. **Output path**
+6. **Research mode defaults**
+   - "Do you want a default research mode? (HIBERNATION / HYPERPHAGIA / ask every time)"
+   - "Do you want a default review preference? (ATTENDED / UNATTENDED / ask every time)"
+
+7. **Output path**
    - “Where should completed research be stored by default?”
    - “Use relative project path or absolute path?”
 
-7. **Final confirmation**
+8. **Final confirmation**
    - Show a short summary of captured preferences and ask: “Apply these as your default USER.md?”
 
 ## Rules
