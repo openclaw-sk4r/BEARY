@@ -16,7 +16,7 @@ By *research*, we mean internet searches of relevant literature, blogs, technica
 
 # User Context (Optional)
 
-If `.agents/skills/beary/USER.md` exists, read it to understand the user's specific needs, audience, and priorities before beginning research.
+If `.beary/USER.md` exists, read it to understand the user's specific needs, audience, and priorities before beginning research.
 
 # Prerequisites
 You must be prompted specifically to begin research. You need:
@@ -79,7 +79,7 @@ If your host agent supports subagents, agent teams, or agent swarms (e.g., Claud
 # Execution Steps
 
 ## 1. Read User Context
-If `.agents/skills/beary/USER.md` exists, read it first to understand the user's audience and research priorities. This will inform how you frame questions and what sources to prioritize.
+If `.beary/USER.md` exists, read it first to understand the user's audience and research priorities. This will inform how you frame questions and what sources to prioritize.
 
 ## 2. Read the Prompt
 Read the prompt to understand the topic of interest and the purpose of the research.

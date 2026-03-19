@@ -2,7 +2,6 @@
 .venv
 whitepaper-output/*
 beary-scratchpad/*
-beary/USER.md
 tools
 tools*
 

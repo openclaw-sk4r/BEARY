@@ -20,7 +20,7 @@ Before starting, you need:
 | Internet Research | `.agents/skills/beary/skills/internet-research/SKILL.md` | Research execution steps |
 | References | `.agents/skills/beary/skills/references/SKILL.md` | Citation format rules |
 | Whitepaper Writing | `.agents/skills/beary/skills/whitepaper-writing/SKILL.md` | Whitepaper writing steps |
-| User Context Template | `.agents/skills/beary/skills/user-context-template/SKILL.md` | Create or refresh `.agents/skills/beary/USER.md` template |
+| User Context Template | `.agents/skills/beary/skills/user-context-template/SKILL.md` | Create or refresh `.beary/USER.md` template |
 
 ---
 
@@ -35,7 +35,7 @@ If the user did not provide a purpose, ask:
 *"Would you like to provide a purpose for this research? This helps focus the questions and narrative. You can skip this if you prefer broad exploration."*
  
 **0.2 Research Mode Selection**
-Read the `RESEARCH_MODE` value from `.agents/skills/beary/USER.md` (the `<!-- RESEARCH_MODE: ... -->` comment). If a valid default exists (hibernation or hyperphagia), use it and inform the user which mode is active, offering to override:
+Read the `RESEARCH_MODE` value from `.beary/USER.md` (the `<!-- RESEARCH_MODE: ... -->` comment). If a valid default exists (hibernation or hyperphagia), use it and inform the user which mode is active, offering to override:
 *"Using your default research mode: {MODE}. Would you like to change it for this run?"*
 
 If no default is set, ask:
@@ -46,7 +46,7 @@ If no default is set, ask:
 Record the final choice as **MODE** (HIBERNATION or HYPERPHAGIA).
 
 **0.3 Review Presence**
-Read the `REVIEW_FLOW` value from `.agents/skills/beary/USER.md` (the `<!-- REVIEW_FLOW: ... -->` comment). If a valid default exists (attended or unattended), use it and inform the user, offering to override:
+Read the `REVIEW_FLOW` value from `.beary/USER.md` (the `<!-- REVIEW_FLOW: ... -->` comment). If a valid default exists (attended or unattended), use it and inform the user, offering to override:
 *"Using your default review flow: {REVIEW_FLOW}. Would you like to change it for this run?"*
 
 If no default is set, ask:
@@ -62,9 +62,9 @@ Record the final choice as **ATTENDED** (yes) or **UNATTENDED** (no).
 
 ### 1. Read User Context (Once)
 
-If `.agents/skills/beary/USER.md` does not exist, first create it from `.agents/skills/beary/templates/user-context-template.md` by following `.agents/skills/beary/skills/user-context-template/SKILL.md`.
+If `.beary/USER.md` does not exist, create the `.beary/` directory at the project root if needed, then create `USER.md` from `.agents/skills/beary/templates/user-context-template.md` by following `.agents/skills/beary/skills/user-context-template/SKILL.md`.
 
-Then read `.agents/skills/beary/USER.md` to understand the user's audience and research priorities. This context applies to the entire workflow — do not re-read it in subsequent steps.
+Then read `.beary/USER.md` to understand the user's audience and research priorities. This context applies to the entire workflow — do not re-read it in subsequent steps.
 
 ### 2. Execute Internet Research
 
@@ -107,7 +107,7 @@ This includes:
 
 Research should run inside `beary-scratchpad/{TOPIC}` to avoid cluttering the project root.
 
-Check `.agents/skills/beary/USER.md` for the output path configuration:
+Check `.beary/USER.md` for the output path configuration:
 - Look for the `OUTPUT_PATH:` value in the "Output Path" section
 - If not specified or file doesn't exist, use `whitepaper-output/` as the default
 - The path can be either:

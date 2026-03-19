@@ -76,7 +76,7 @@ Review flow: Attended or Unattended
 
 ## USER.md setup (interview-first)
 On first run, BEARY will interview you and generate/update:
-- `.agents/skills/beary/USER.md`
+- `.beary/USER.md`
 
 It captures defaults for:
 - Audience level and role
@@ -87,7 +87,7 @@ It captures defaults for:
 - Output path
 
 ### Configuring Output Path manually (optional)
-You can still edit `.agents/skills/beary/USER.md` directly:
+You can still edit `.beary/USER.md` directly:
 
 ```markdown
 <!-- OUTPUT_PATH: whitepaper-output -->
