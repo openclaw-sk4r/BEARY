@@ -21,6 +21,24 @@ When researching, prioritize:
 Avoid sources from:
 - Unknown blogs and unverified forums
 
+## Research Mode
+
+Default research mode controls token usage and depth.
+
+- **Hibernation**: Token-conservative. Fewer questions and search terms, sufficiency checks enabled, subtopics only when clearly needed.
+- **Hyperphagia**: Token-generous. More questions and search terms, no early stopping, subtopics encouraged.
+
+<!-- RESEARCH_MODE: hibernation -->
+
+## Review Flow
+
+Default review flow controls whether BEARY pauses for user review at checkpoints.
+
+- **Attended**: Pause at checkpoints for user review before proceeding.
+- **Unattended**: Complete the entire workflow without stopping.
+
+<!-- REVIEW_FLOW: attended -->
+
 ## Output Path
 
 Specify where completed whitepaper artifacts should be moved after the workflow completes.

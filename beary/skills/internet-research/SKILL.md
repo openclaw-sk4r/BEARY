@@ -2,7 +2,7 @@
 name: internet-research
 description: Generate notes.md file or files from internet research on the topic of interest.
 license: MIT
-compatibility: Requires internet access and edit_file capabilities
+compatibility: Requires internet access and edit_file capabilities. Optionally uses subagents/agent teams for parallel research when available.
 metadata:
   author: sjankovic-wwt
   version: "1.0"
@@ -44,6 +44,38 @@ Token-generous mode. Beary is bulking up before hibernation — eat those tokens
 - **Subtopics encouraged** — If the topic has any natural subdivisions, break it into subtopics for deeper coverage.
 - **Maximize variety** — Prioritize diverse sources and perspectives over efficiency.
 
+# Parallel Execution with Subagents
+
+If your host agent supports subagents, agent teams, or agent swarms (e.g., Claude Code's Agent tool, Windsurf Cascade's parallel actions, or any multi-agent orchestration), use them to parallelize research. This dramatically reduces wall-clock time without sacrificing quality.
+
+## When to Parallelize
+
+- **Research questions within the same phase** (General Understanding or Deeper Dive) are independent and can be researched in parallel.
+- **Search terms within a single question** are independent and can be searched in parallel.
+- **Subtopic research** (Complex Topics in step 4.2.2.2) — each subtopic can be assigned to a separate subagent.
+
+## How to Parallelize
+
+1. **Fan out by question:** After generating research questions (step 4.1.1 or 4.2.1), launch one subagent per question. Each subagent receives:
+   - The question and its search terms
+   - The citation format rules (from `.agents/skills/beary/skills/references/SKILL.md`)
+   - The user context (audience, priorities)
+   - Instructions to return: (a) notes organized by question with inline citations, and (b) a list of reference entries in the standard format
+
+2. **Merge results:** Once all subagents return, the orchestrator:
+   - Appends each subagent's notes into the appropriate section of `{TOPIC}-notes.md`
+   - Merges all reference entries into `{TOPIC}-references.md`, re-numbering IDs sequentially and updating in-text citations to match
+   - Runs the synthesis step (summary paragraph) over the combined notes
+
+3. **Fan out by subtopic:** For complex topics, launch one subagent per subtopic. Each subagent handles all questions within its subtopic and returns a completed `{subtopic}-notes.md` and its reference entries.
+
+## Constraints
+
+- **HIBERNATION mode with sufficiency checks:** Parallelizing all questions defeats early stopping. In HIBERNATION mode, prefer running questions sequentially or in small batches (2 at a time) so sufficiency checks remain meaningful.
+- **HYPERPHAGIA mode:** Full parallelization is encouraged — there are no sufficiency checks to respect.
+- **Citation ID conflicts:** Each subagent should use placeholder IDs (e.g., `[Q1-1]`, `[Q1-2]`). The orchestrator re-numbers them sequentially during the merge step.
+- **If subagents are not available:** Fall back to the sequential execution steps below. The workflow is designed to work either way.
+
 # Execution Steps
 
 ## 1. Read User Context
@@ -77,7 +109,9 @@ Before beginning research, use the given TOPIC, description, and purpose to gene
 You may use your general knowledge of software engineering, machine learning, and other relevant technical topics to inform these questions.
 
 #### 4.1.2 Notes on General Understanding
-Your answers should go under the heading "General Understanding" in the `beary-scratchpad/{TOPIC}/notes/{TOPIC}-notes.md` file. *Organize your notes by question, not source.* 
+Your answers should go under the heading "General Understanding" in the `beary-scratchpad/{TOPIC}/notes/{TOPIC}-notes.md` file. *Organize your notes by question, not source.*
+
+> **Parallel execution:** If subagents are available, fan out research questions in parallel per the "Parallel Execution with Subagents" section above. The steps below describe the work each agent (or subagent) performs per question.
 
 For each research question, complete the following steps.
 
@@ -119,6 +153,9 @@ In order to generate deeper questions, use the General Understanding Section of 
 Choose the following instructions based on whether your topic is straightforward or complex. Skip the other instructions.
 
 ##### 4.2.2.1 Straightforward Topics
+
+> **Parallel execution:** If subagents are available, fan out in-depth research questions in parallel per the "Parallel Execution with Subagents" section above.
+
 For each research question, complete the following steps.
 
 1. Create a new section for the question in the "Deeper Dive" section of the `beary-scratchpad/{TOPIC}/notes/{TOPIC}-notes.md` file.
@@ -133,6 +170,9 @@ Once all in-depth research questions have been answered, synthesize the "Deeper 
 2. Add a summary paragraph at the end of the "Deeper Dive" section with key takeaways. Ensure citations remain accurate.
 
 ##### 4.2.2.2 Complex Topics
+
+> **Parallel execution:** If subagents are available, assign each subtopic to a separate subagent per the "Parallel Execution with Subagents" section above.
+
 For each subtopic, complete the following steps.
 1. Create a new file called `{subtopic}-notes.md` for your subtopic using the `.agents/skills/beary/templates/subtopic-notes.md` template.
 2. For each question in the subtopic, create a new section in the `{subtopic}-notes.md` file.

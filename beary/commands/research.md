@@ -35,18 +35,24 @@ If the user did not provide a purpose, ask:
 *"Would you like to provide a purpose for this research? This helps focus the questions and narrative. You can skip this if you prefer broad exploration."*
  
 **0.2 Research Mode Selection**
-Ask the user to choose their research mode:
+Read the `RESEARCH_MODE` value from `.agents/skills/beary/USER.md` (the `<!-- RESEARCH_MODE: ... -->` comment). If a valid default exists (hibernation or hyperphagia), use it and inform the user which mode is active, offering to override:
+*"Using your default research mode: {MODE}. Would you like to change it for this run?"*
+
+If no default is set, ask:
 *"Which research mode would you like to use?"*
 - **Hibernation**: Preserve my tokens and be judicious with amounts collected and written
 - **Hyperphagia**: Prioritize quantity and variety of resources, eat those tokens yum
 
-Record the user's choice as **MODE** (HIBERNATION or HYPERPHAGIA).
- 
+Record the final choice as **MODE** (HIBERNATION or HYPERPHAGIA).
+
 **0.3 Review Presence**
-Ask:
+Read the `REVIEW_FLOW` value from `.agents/skills/beary/USER.md` (the `<!-- REVIEW_FLOW: ... -->` comment). If a valid default exists (attended or unattended), use it and inform the user, offering to override:
+*"Using your default review flow: {REVIEW_FLOW}. Would you like to change it for this run?"*
+
+If no default is set, ask:
 *"Would you like to be present for review checkpoints during the process? This improves quality but requires continued engagement. If you say no, I'll complete the entire workflow without stopping."*
- 
-Record the user's choice as **ATTENDED** (yes) or **UNATTENDED** (no).
+
+Record the final choice as **ATTENDED** (yes) or **UNATTENDED** (no).
 
 **Mode Summary:**
 - **HIBERNATION**: Token-conservative mode. Uses minimal questions/search terms, performs sufficiency checks, and defaults to single-topic (no subtopics).
